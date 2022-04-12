@@ -1,56 +1,81 @@
 package tn.esprit.tn.entity;
 
+import java.io.Serializable;
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class User {
-	
-	private int IdUser ; 
-	
-	private String Nom ; 
-	
-	private String Prenom ; 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+@Data
+@Entity
+@NoArgsConstructor
+@Table(name="User")
+public class User implements Serializable {
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column(name="idUser")
 
-	private String Email ; 
+	private int idUser ; 
+	@Column(name="Nom")
+
+	private String nom ; 
+	@Column(name="Prenom")
+
+	private String prenom ; 
+	@Column(name="Email")
+
+	private String email ; 
+	@Column(name="Password")
+
+	private String password ; 
+	@Column(name="Introduction")
+
+	private String introduction ; 
+	@Column(name="NbrEmployee")
+
+	private int  nbrEmploye ;
+	@Column(name="Numero")
+
+	private int numero_Tel ; 
+	@Column(name="Localisation")
+
+	private String localisation ; 
 	
-	private String Password ; 
+
 	
-	private String Introduction ; 
+	@OneToMany (mappedBy="user")
+	private Set<Enfants> enfants ;
 	
-	private int  NbrEmploye ;
 	
-	private int Numero_Tel ; 
+	@OneToMany (mappedBy="user")
+	private Set<Rendezvous> rendezvous ;
 	
-	private String Localisation ; 
+	@OneToMany (mappedBy="user")
+	private Set<Publication> publication ; 
 	
-	@Autowired
-	@Enumerated(EnumType.STRING)
-	private Role Role;	
+	@OneToMany (mappedBy="jardin")
+	private Set<Classe> classe ;
 	
-	@OneToMany (mappedBy="Parents")
-	private Set<Enfants> Enfants ;
+	@OneToMany (mappedBy="jardin")
+	private Set<Employe> employe ;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	private Rendezvous Rendezvous ;
-	
-	@ManyToOne(cascade = CascadeType.ALL)
-	private Reclamation Reclamation ;
-	
-	@OneToMany (mappedBy="Publication")
-	private Set<Publication> Publication ; 
-	
-	@OneToMany (mappedBy="Jardin")
-	private Set<Classe> Classe ;
-	
-	@OneToMany (mappedBy="Jardin")
-	private Set<Employe> Employe ;
+	@OneToMany (mappedBy="user")
+	private Set<Reclamation> reclamation ;
 
 }
 
