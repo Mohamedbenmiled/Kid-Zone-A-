@@ -52,7 +52,7 @@ public class PublicationController {
 		publicationService.deletePublication(idPost);
 	}
 
-	// http://localhost:8068/Publication/modify-post/{idPost}
+	// http://localhost:8068/Publication/modify-post
 	@PutMapping("/modify-post")
 	@ResponseBody
 	public Publication modifyPublication(@RequestBody Publication p) {
