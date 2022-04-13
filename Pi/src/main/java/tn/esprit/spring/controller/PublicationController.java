@@ -4,6 +4,7 @@ package tn.esprit.spring.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,8 +28,8 @@ public class PublicationController {
 	@Autowired
 	IPublicationService publicationService;
 
-	// http://localhost:8068/Publication/retrieve-all-publication
-	@GetMapping("/retrieve-all-publication")
+	// http://localhost:8068/Publication/affiche
+	@GetMapping(value = "/affiche"  , produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public List<Publication> getPosts() {
 		List<Publication> list = publicationService.retreiveAllPublication();
@@ -44,14 +45,14 @@ public class PublicationController {
 		return publication;
 	}
 
-	// http://localhost:8068/Publication/remove-post/{stock-id}
+	// http://localhost:8068/Publication/remove-post/{idPost}
 	@DeleteMapping("/remove-post/{idPost}")
 	@ResponseBody
 	public void removePost(@PathVariable("idPost") Long idPost) {
 		publicationService.deletePublication(idPost);
 	}
 
-	// http://localhost:8068/Publication/modify-post
+	// http://localhost:8068/Publication/modify-post/{idPost}
 	@PutMapping("/modify-post")
 	@ResponseBody
 	public Publication modifyPublication(@RequestBody Publication p) {

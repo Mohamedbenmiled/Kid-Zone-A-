@@ -11,11 +11,17 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 @Data
 @Entity
 @NoArgsConstructor
+@Getter
+@Setter
 @Table(name="CategoriePost")
 
 public class CategoriePost implements Serializable {
@@ -29,7 +35,7 @@ public class CategoriePost implements Serializable {
 
 	private String label ; 
 	@Column(name="Publication")
-
+	@JsonIgnore
 	@OneToMany (mappedBy="categoriePublication")
 	private Set<Publication> publication ;
 }

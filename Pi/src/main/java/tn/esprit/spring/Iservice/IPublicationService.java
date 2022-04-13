@@ -11,6 +11,4 @@ public interface IPublicationService {
 	 void deletePublication(long id);
 	 Publication updatePublication (Publication p);
 	 Publication getPublicationById( long id);
-	 List<Publication> findClientByAge();
-
 }
