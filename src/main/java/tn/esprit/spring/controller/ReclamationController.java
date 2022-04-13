@@ -41,7 +41,7 @@ public class ReclamationController {
 
 
 	// http://localhost:8068/Reclamation/add-post
-	@PostMapping("/add-post")
+	@PostMapping("/add-rec")
 	@ResponseBody
 	public Reclamation addRec(@RequestBody Reclamation r) {
 		Reclamation reclamation = ReclamationService.addReclamation(r);
@@ -49,7 +49,7 @@ public class ReclamationController {
 	}
 
 	// http://localhost:8068/Reclamation/remove-post/{idPost}
-	@DeleteMapping("/remove-post/{idRec}")
+	@DeleteMapping("/remove-rec/{idRec}")
 	@ResponseBody
 	public void removeRec(@PathVariable("idRec") Long idRec) {
 		ReclamationService.removeReclamation(idRec);
