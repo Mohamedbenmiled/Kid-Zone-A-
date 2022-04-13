@@ -4,15 +4,16 @@ import java.util.List;
 
 import tn.esprit.spring.entity.Reclamation;
 
-public interface IReclamationService {
+public interface IReclamationService{
 	List<Reclamation> retrieveAllReclamations();
 	
-	Reclamation addReclamation(Reclamation rec,Long id,Long IdUser);
+	Reclamation addReclamation(Reclamation rec);
 	
-	Reclamation updateReclamation(Reclamation rec,Long id,Long IdUser);
+	Reclamation updateReclamation(Reclamation rec);
 	
-	Reclamation retrieveReclamation(Reclamation rec,Long id,Long IdUser);
+	//Reclamation retrieveReclamation(Reclamation rec);
 	
 	void removeReclamation(Long id);
+
 
 	}
