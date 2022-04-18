@@ -11,7 +11,7 @@ public interface IReclamationService{
 	
 	Reclamation updateReclamation(Reclamation rec);
 	
-	//Reclamation retrieveReclamation(Reclamation rec);
+    Reclamation retrieveReclamation(Long  id);
 	
 	void removeReclamation(Long id);
 

@@ -26,20 +26,20 @@ ReclamationRepository RR;
 	public Reclamation addReclamation(Reclamation rec) {
 		// TODO Auto-generated method stub
 		RR.save(rec);
-		return null;
+		return rec;
 	}
 
 	@Override
 	public Reclamation updateReclamation(Reclamation rec) {
-		// TODO Auto-generated method stub
-		return null;
+		RR.save(rec);
+		return rec;
 	}
 
-	/*@Override
-	public Reclamation retrieveReclamation(Reclamation rec) {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
+	@Override
+	public Reclamation retrieveReclamation(Long id) {
+		Reclamation rec = RR.findById(id).orElse(null);
+		return rec;
+	}
 
 	@Override
 	public void removeReclamation(Long id) {

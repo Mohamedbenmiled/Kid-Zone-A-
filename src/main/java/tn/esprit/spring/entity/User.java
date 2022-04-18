@@ -18,6 +18,8 @@ import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 @Data
@@ -57,23 +59,25 @@ public class User implements Serializable {
 	private String localisation ; 
 	
 
-	
+	@JsonIgnore
 	@OneToMany (mappedBy="user")
 	private Set<Enfants> enfants ;
 	
-	
+	@JsonIgnore
 	@OneToMany (mappedBy="user")
 	private Set<Rendezvous> rendezvous ;
-	
+	@JsonIgnore
 	@OneToMany (mappedBy="user")
 	private Set<Publication> publication ; 
-	
+	@JsonIgnore
 	@OneToMany (mappedBy="jardin")
 	private Set<Classe> classe ;
-	
+	@JsonIgnore
 	@OneToMany (mappedBy="jardin")
 	private Set<Employe> employe ;
 	
+	
+	@JsonIgnore
 	@OneToMany (mappedBy="user")
 	private Set<Reclamation> reclamation ;
 

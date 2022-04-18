@@ -5,13 +5,13 @@ import java.util.List;
 import tn.esprit.spring.entity.Rendezvous;
 
 public interface IRendezVousService {
-	List<Rendezvous> retrieveAllRendezvouss();
+	List<Rendezvous> retrieveAllRendezvous();
 	
-	Rendezvous addRendezvous(Rendezvous rdv,Long id,Long IdUser);
+	Rendezvous addRendezvous(Rendezvous rdv);
 	
-	Rendezvous updateRendezvous(Rendezvous rdv,Long id,Long IdUser);
+	Rendezvous updateRendezvous(Rendezvous rdv);
 	
-	Rendezvous retrieveRendezvous(Rendezvous rdv,Long id,Long IdUser);
+	Rendezvous retrieveRendezvous(Long id);
 	
 	void removeRendezvous(Long id);
 

@@ -56,9 +56,15 @@ public class ReclamationController {
 	}
 
 	// http://localhost:8068/Reclamation/modify-post/{idPost}
-	/*@PutMapping("/modify-post")
+	@PutMapping("/modify-rec")
 	@ResponseBody
-	public Reclamation modifyReclamation(@RequestBody Reclamation p) {
-		return ReclamationService.updateReclamation(p);*/
+	public Reclamation modifyReclamation(@RequestBody Reclamation r) {
+		return ReclamationService.updateReclamation(r);
 	}
-
+	
+	@GetMapping("/retrieve-rec/{idRec}")
+	@ResponseBody
+	public Reclamation retrieveReclamation(@PathVariable("idRec") Long idRec) {
+		return ReclamationService.retrieveReclamation(idRec);
+	}
+}
