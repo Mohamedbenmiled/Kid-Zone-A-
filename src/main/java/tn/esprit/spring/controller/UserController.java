@@ -50,5 +50,10 @@ public class UserController {
 		userService.deleteUser(IdUser);
 		return ResponseEntity.noContent().build();
 	}
-
+	
+	@GetMapping("/getUser/{username}")
+	@ResponseBody
+	public ResponseEntity<User> getUser(@PathVariable("username") String username) {
+		return ResponseEntity.ok().body(userService.getUser(username));
+	}
 }
