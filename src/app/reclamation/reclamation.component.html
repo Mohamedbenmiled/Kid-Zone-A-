@@ -1,0 +1,106 @@
+<div class="row" style="margin-top: 25%;margin-left:25%">
+    <div class="row">
+        <div class="col-md-12">
+            <ng-template #mymodal1 let-modal1 style="margin-top:100px">
+                <div class="modal">
+                    <h4 class="modal-title" id="modal-basic-title" >Nouvelle reclamation</h4>
+                    <button type="button" class="close" aria-label="Close" (click)="modal1.dismiss('Cross click')">
+                        <span aria-hidden="true" (click)="cancel()">×</span>
+                    </button>
+    
+                </div>
+                <div class="center">
+                <form style="z-index:99;">
+                    <!-- <div class="row" class="col-md-6">
+                        <input type="text" placeholder="RecID" [(ngModel)]="reclamation.idReclamation"
+                            [ngModelOptions]="{standalone : true}">
+                    </div> -->
+                    <select class="row" label="Note" class="col-md-6">
+                        <option [ngValue]="false">Negative Review</option>
+                        <option [ngValue]="true">Positive Review</option>
+                        <input type="text" placeholder="Note" [(ngModel)]="reclamation.note"
+                            [ngModelOptions]="{standalone : true}">
+                    </select>
+                    <div class="row" class="col-md-6">
+                        <input type="text" placeholder="Description" [(ngModel)]="reclamation.description"
+                            [ngModelOptions]="{standalone : true}">
+                    </div>
+                    <div class="row" class="col-md-6">
+                       
+                           
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-success" (click)="addReclamation(reclamation)" (click)="modal1.close('Save click')">Add</button> 
+                    <button type="button" class="btn btn-info" (click)="modal1.close('Save click')" >Cancel</button>
+                </form>
+            </div>
+            </ng-template>
+            <div class="row">
+                <div class="card" class="text-center">
+                    <table class="table">
+                        <thead style="background-color: rgb(192, 183, 183);">
+                            <th>RecID</th>
+                            <th>Note</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor='let r of listReclamations'>
+                                <td>{{r.idReclamation}}</td>
+                                <td>{{r.note}}</td>
+                                <td>{{r.description}}</td>
+                                <td><button type="button" class="btn btn-outline-primary"
+                                        (click)="open(mymodal)">edit</button>
+                                    <ng-template #mymodal let-modal>
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="modal-basic-title">Edit</h4>
+                                            <button type="button" class="close" aria-label="Close"
+                                                (click)="modal.dismiss('Cross click')">
+                                                <span aria-hidden="true" (click)="cancel()">×</span>
+    
+                                            </button>
+    
+                                        </div>
+                                        <div>
+                                        <form>
+                                            <div class="modal-body">
+    
+                                                <!-- <div class="row" class="col-md-5">
+                                                    <label>RecID</label>
+                                                    <input type="text" [(ngModel)]="r.idReclamation" [ngModelOptions]="{standalone : true}" />
+                                                </div> -->
+                                                <select class="row" label="Note" class="col-md-6">
+                                                    <option [ngValue]="false">Negative Review</option>
+                                                    <option [ngValue]="true">Positive Review</option>
+                                                    <input type="text" placeholder="Note" [(ngModel)]="reclamation.note"
+                                                        [ngModelOptions]="{standalone : true}">
+                                                </select>
+                                                <div class="row" class="col-md-5">
+                                                    <label>UserID</label>
+                                                    <input type="string" [(ngModel)]="r.description" [ngModelOptions]="{standalone : true}" />
+                                                </div>
+                                            </div>
+    
+                                            <div class="modal-footer">
+    
+                                                <button type="button" class="btn btn-info"
+                                                    (click)="modal.close('Save click')" (click)="cancel()">Cancel</button>
+                                                <button class="btn btn-success"(click)="editReclamation(r)" (click)="modal.close('Save click')">Validate</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    </ng-template>
+                                    <button type="button" class="btn btn-outline-danger"
+                                        (click)="deleteReclamation(r.idReclamation)">delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn btn-round btn-sm btn-success" (click)="open(mymodal1)">Add new Product</button>
+                    <br><br>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
