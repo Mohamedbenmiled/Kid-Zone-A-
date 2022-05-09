@@ -23,6 +23,7 @@ public class EmployeService implements IEmployeService {
 	@Override
 	public Employe updateEmploye(Employe emp) {
 		Employe employe = EmployeRepository.findById(emp.getIdEmploye()).get();
+		employe.setIdEmploye(emp.getIdEmploye());
 		employe.setNom(emp.getNom());
 		employe.setPrenom(emp.getPrenom());
 		employe.setTel(emp.getTel());
@@ -31,7 +32,7 @@ public class EmployeService implements IEmployeService {
 	}
 
 	@Override
-	public void deleteEmploye(Integer idEmployee) {
+	public void deleteEmploye(long idEmployee) {
 		Optional<Employe> Employe = EmployeRepository.findById(idEmployee) ;
 		 if (Employe.isPresent()) {
 			 EmployeRepository.deleteById(idEmployee);
@@ -47,5 +48,16 @@ public class EmployeService implements IEmployeService {
 		return EmployeRepository.findAll();
 	}
 
+	@Override
+	public List<Employe> retrieveEmployesByName(String nom) {
+		// TODO Auto-generated method stub
+		//return EmployeRepository.EmployeByName(nom);
+		return null ;
+	}
+
+
+		
+	}
+
 	
-}
+

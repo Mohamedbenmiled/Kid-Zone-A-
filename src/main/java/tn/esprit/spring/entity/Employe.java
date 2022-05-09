@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +27,8 @@ public class Employe  implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	
-	@Column(name="idEmployee")
-		private int idEmploye ;
+	@Column(name="id_Employee")
+		private long id_Employee ;
 	
 	@Column(name="Nom")
 		private String nom ;
@@ -48,11 +48,14 @@ public class Employe  implements Serializable {
 	//@Column(name="Classe")
 	@ManyToOne(cascade = CascadeType.ALL)
 		private Classe classe ;
-	public int getIdEmploye() {
-		return idEmploye;
+	//@Column(name="idcours")
+			@ManyToOne(cascade = CascadeType.ALL)
+			private Cours cours ;
+	public long getIdEmploye() {
+		return id_Employee;
 	}
-	public void setIdEmploye(int idEmploye) {
-		this.idEmploye = idEmploye;
+	public void setIdEmploye(long idEmploye) {
+		this.id_Employee = idEmploye;
 	}
 	public String getNom() {
 		return nom;
@@ -93,6 +96,7 @@ public class Employe  implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
 		
 
 		
