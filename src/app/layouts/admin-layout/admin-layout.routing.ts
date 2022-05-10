@@ -11,6 +11,9 @@ import { EventComponent } from 'src/app/event/event.component';
 import { addformcomponent } from 'src/app/add-form/add-form.component';
 import { AddReclamationFormComponent } from 'src/app/add-reclamation-form/add-reclamation-form.component';
 import { ReclamationComponent } from 'src/app/reclamation/reclamation.component';
+import { RendezVousComponent } from 'src/app/rendez-vous-component/rendez-vous-component.component';
+import { AddRendezVousFormComponent } from 'src/app/add-rendez-vous-component/add-rendez-vous-component.component';
+
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -23,5 +26,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'event',          component: EventComponent },
     { path: 'add-form',          component: addformcomponent },
     { path: 'reclamation', component:ReclamationComponent},
-    { path: 'add-reclamation-form',          component: AddReclamationFormComponent }
+    { path: 'add-reclamation-form',          component: AddReclamationFormComponent },
+    {path: 'rendezvous', component: RendezVousComponent},
+    { path: 'add-rendez-vous-form',          component: AddRendezVousFormComponent}
 ];

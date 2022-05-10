@@ -20,6 +20,7 @@ export class AddReclamationFormComponent implements OnInit {
     console.log(this.Reclamation);
     this.service.addReclamation(this.Reclamation).subscribe(data=>ReclamationService);
   }
+  
   /*create(){ 
     console.log("heloooooooooooooooooooo");
    // this.submit.emit(this.Reclamation);

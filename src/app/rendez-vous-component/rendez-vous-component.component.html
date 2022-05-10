@@ -1,14 +1,14 @@
-<!-- <p>Reclamation works!</p> -->
+<!-- <p>Rendez Vous works!</p> -->
 <html>
 <head>
   
-<!-- <title>Reclamation works!</title> -->
+<!-- <title>Rendez Vous works!</title> -->
 </head>
 <body>
   <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
     <div class="container-fluid">
       <div class="header-body">
-        <h2>Reclamation</h2>
+        <h2>Rendez Vous</h2>
   
       </div>
     </div>
@@ -22,35 +22,35 @@
             </div> -->
                  <table class="table">
                   <thead style="background-color: rgb(192, 183, 183);">
-                    <th>Description</th>
-                    <th>Note</th>
+                    <th>date</th>
+                    <th>sujet</th>
                     <th>Action</th>
                     </thead>
                     <tbody>
-                    <tr *ngFor='let r of listReclamation'>
-                        <td>{{r.description}}</td>
-                        <td>{{r.note}} </td>
+                    <tr *ngFor='let r of listRendezVous'>
+                        <td>{{r.date | date : 'yyyy-MM-dd'}}</td>
+                        <td>{{r.sujet}} </td>
                         <td>
                              <button type="button" class="btn btn-outline-primary" 
                             (click)="open()">edit</button> 
                             <ng-template #mymodal let-modal>...
                             </ng-template>
                             <button type="button" class="btn btn-outline-danger"
-                                (click)="deleteReclamation(r.idReclamation)">delete</button>
+                                (click)="deleteRendezVous(r.idRdv)">delete</button>
                         </td>
                     </tr>
                     <tr>
                          <!-- <button class="btn btn-danger" (click)="open(content)">
-                            add Reclamation
+                            add Rendez Vous
                         </button>  -->
-                         <a  class="btn btn-danger btn-round" routerLink="/add-reclamation-form">add Reclamation</a>   
+                         <a  class="btn btn-danger btn-round" routerLink="/add-rendez-vous-form">add Rendez Vous</a>   
                     </tr>
                     
                 </tbody> 
             </table>
             <!-- <button type="button" class="btn btn-primary btn-lg btn-block" (click)="openPDF()">Download PDF</button> -->
             <!-- <div>
-              <button type="button"  class="btn btn-danger btn-round" (click)="triReclamation()">Rank </button>
+              <button type="button"  class="btn btn-danger btn-round" (click)="triRendez Vous()">Rank </button>
             </div> -->
         </div>
     </div>
@@ -58,7 +58,7 @@
                 <ng-template #content let-modal>
                   <div class="modal-body">
                     <app-add-form
-                    (submit)="create($Reclamation)"
+                    (submit)="create($Rendez Vous)"
                     ></app-add-form>
                   </div>
                 </ng-template>

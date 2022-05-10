@@ -21,6 +21,8 @@ import { EventComponent } from './event/event.component';
 import { CategorieEventComponent } from './categorie-event/categorie-event.component';
 import { AddReclamationFormComponent } from './add-reclamation-form/add-reclamation-form.component';
 import { ReclamationComponent } from './reclamation/reclamation.component';
+import { RendezVousComponent } from './rendez-vous-component/rendez-vous-component.component';
+import { AddRendezVousFormComponent } from './add-rendez-vous-component/add-rendez-vous-component.component';
 
 @NgModule({
   imports: [
@@ -42,7 +44,11 @@ import { ReclamationComponent } from './reclamation/reclamation.component';
     EventComponent,
     EnfantCComponent,
     CategorieEventComponent,
-    ReclamationComponent
+    AddReclamationFormComponent,
+    ReclamationComponent,
+    RendezVousComponent,
+    AddRendezVousFormComponent
+    
   ],
   providers: [
   ],
