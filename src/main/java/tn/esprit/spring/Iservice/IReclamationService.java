@@ -12,6 +12,14 @@ public interface IReclamationService{
 	Reclamation updateReclamation(Reclamation rec);
 	
     Reclamation retrieveReclamation(Long  id);
+    public List<Reclamation> getAllReclamationLabel();
+	
+	public List<Reclamation> getLabelDesc();
+	
+	public List<Reclamation> rechercheReclamation(String label);
+		
+
+
 	
 	void removeReclamation(Long id);
 

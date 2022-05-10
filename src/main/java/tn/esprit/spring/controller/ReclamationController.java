@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,7 +24,7 @@ import tn.esprit.spring.entity.Reclamation;
 
 
 
-
+@CrossOrigin
 @RestController
 @RequestMapping("/Reclamation")
 public class ReclamationController {
@@ -66,5 +67,17 @@ public class ReclamationController {
 	@ResponseBody
 	public Reclamation retrieveReclamation(@PathVariable("idRec") Long idRec) {
 		return ReclamationService.retrieveReclamation(idRec);
+	}
+	
+	@GetMapping("/rechercheReclamation/{rec-label}")
+	@ResponseBody
+	public List <Reclamation> rechercheReclamation(@PathVariable("rec-label") String label) {
+		return ReclamationService.rechercheReclamation(label);
+	}
+
+	@GetMapping("/getReclamationDesc")
+	@ResponseBody
+	public List<Reclamation> getReclamationDesc(){
+		return ReclamationService.getLabelDesc();
 	}
 }

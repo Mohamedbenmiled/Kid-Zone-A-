@@ -47,5 +47,19 @@ ReclamationRepository RR;
 		RR.deleteById(id);
 		
 	}
+	@Override
+	public List<Reclamation> getAllReclamationLabel(){
+		return RR.getByLabelAsc();
+	}
+
+	@Override
+	public List<Reclamation> getLabelDesc(){
+		return RR.getByLabelDesc();
+	}
+	@Override
+	public List<Reclamation> rechercheReclamation(String label) {
+		
+		return RR.SearchByLabel(label);
+	}
 
 }

@@ -26,10 +26,14 @@ public class Rendezvous implements Serializable {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column(name="idRDV")
 
-	private int idRdv ;
+	private long idRdv ;
 	@Column(name="Date")
 
 	private Date date ; 
+	
+	@Column(name="Sujet")
+
+	private String sujet ; 
 	//@Column(name="User")
 
 	@ManyToOne(cascade = CascadeType.ALL)

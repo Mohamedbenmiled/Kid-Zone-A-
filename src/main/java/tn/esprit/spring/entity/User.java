@@ -18,6 +18,7 @@ import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
@@ -77,9 +78,9 @@ public class User implements Serializable {
 	private Set<Employe> employe ;
 	
 	
-	@JsonIgnore
-	@OneToMany (mappedBy="user")
-	private Set<Reclamation> reclamation ;
+	//@JsonBackReference
+	//@OneToMany (mappedBy="user")
+	//private Set<Reclamation> reclamation ;
 
 }
 
