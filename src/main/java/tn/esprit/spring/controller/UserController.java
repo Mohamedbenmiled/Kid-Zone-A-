@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -50,10 +51,16 @@ public class UserController {
 		userService.deleteUser(IdUser);
 		return ResponseEntity.noContent().build();
 	}
-	
+
 	@GetMapping("/getUser/{username}")
 	@ResponseBody
 	public ResponseEntity<User> getUser(@PathVariable("username") String username) {
 		return ResponseEntity.ok().body(userService.getUser(username));
+	}
+
+	@GetMapping("/search")
+	public ResponseEntity<List<User>> retrieveTransporteurByNom(@RequestParam("firstName") String firstName,
+			@RequestParam("lastName") String lastName, @RequestParam("idRole") Integer idRole) {
+		return ResponseEntity.ok().body(userService.search(firstName, lastName, idRole));
 	}
 }

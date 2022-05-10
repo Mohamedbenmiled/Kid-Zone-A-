@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.repository.query.Param;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -63,7 +64,7 @@ public class UserService implements IUserService, UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user = userRepository.findByUsername(username);
 		if (user == null) {
-			throw new UsernameNotFoundException("User npt found in the database");
+			throw new UsernameNotFoundException("User not found in the database");
 		}
 		Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
 		user.getRoles().forEach(role -> {
@@ -71,5 +72,10 @@ public class UserService implements IUserService, UserDetailsService {
 		});
 		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
 				authorities);
+	}
+	
+	@Override
+	public List<User> search(String firstName, String lastName, Integer idRole) {
+		return userRepository.search(firstName, lastName, idRole);
 	}
 }

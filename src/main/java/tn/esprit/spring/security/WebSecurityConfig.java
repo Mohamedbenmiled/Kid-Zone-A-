@@ -60,8 +60,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		final CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter(
 				authenticationManager());
-		customAuthenticationFilter.setFilterProcessesUrl("/auth/login");
-
+		customAuthenticationFilter.setFilterProcessesUrl("/auth/login"); 
+		
 		http.cors().and().csrf().disable();
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		http.authorizeRequests().antMatchers("/auth/login/**", "/auth/signup/**", "/roles/**").permitAll();
