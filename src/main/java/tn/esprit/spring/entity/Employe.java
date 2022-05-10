@@ -48,9 +48,8 @@ public class Employe  implements Serializable {
 	//@Column(name="Classe")
 	@ManyToOne(cascade = CascadeType.ALL)
 		private Classe classe ;
-	//@Column(name="idcours")
-			@ManyToOne(cascade = CascadeType.ALL)
-			private Cours cours ;
+	;
+			
 	public long getIdEmploye() {
 		return id_Employee;
 	}

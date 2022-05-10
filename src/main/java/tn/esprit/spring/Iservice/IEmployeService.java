@@ -9,6 +9,7 @@ public interface IEmployeService {
 	Employe updateEmploye(Employe emp);
 	void deleteEmploye(long idEmployee);
 	List<Employe> retrieveAll();
-	List<Employe>retrieveEmployesByName(String nom);
+	public List<Employe> getLabelDesc();
+	List<Employe> SearchByNom(String nom);
 
 }

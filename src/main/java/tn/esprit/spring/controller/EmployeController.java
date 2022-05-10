@@ -50,7 +50,12 @@ public class EmployeController {
 	@GetMapping("/retrieve-employeByNom/{employe-nom}")
 	@ResponseBody
 	public List <Employe> retrieveEmployeByNom(@PathVariable("employe-nom") String name) {
-		return employeService.retrieveEmployesByName(name);
+		return employeService.SearchByNom(name);
+	}
+	@GetMapping("/getEmployeDesc")
+	@ResponseBody
+	public List<Employe> getEmployeDesc(){
+		return employeService.getLabelDesc();
 	}
 	
 }

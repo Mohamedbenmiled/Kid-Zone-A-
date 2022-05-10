@@ -12,6 +12,8 @@ import tn.esprit.spring.entity.Employe;;
 
 @Repository
 public interface EmployeRepository extends JpaRepository<Employe, Long>{
-	//@Query("SELECT e FROM employee e"+ " WHERE e.nom LIKE %:nom%")
-   // List<Employe> EmployeByName(@Param("nom") String nom);
+	@Query("Select a FROM Employee a ORDER BY a.nom DESC")
+	public List<Employe> getByNomDesc();
+	@Query("SELECT t FROM Employee t WHERE t.nom LIKE %:nom%")
+    List<Employe> SearchByNom(@Param("nom") String nom);
 }
