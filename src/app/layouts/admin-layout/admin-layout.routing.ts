@@ -9,7 +9,9 @@ import { ClassManagementComponent } from 'src/app/pages/class-management/class-m
 import { EnfantCComponent } from 'src/app/pages/enfant-c/enfant-c.component';
 import { EventComponent } from 'src/app/event/event.component';
 import { addformcomponent } from 'src/app/add-form/add-form.component';
-import { ReclamationComponent } from 'src/app/reclamation/reclamation.component'
+import { AddReclamationFormComponent } from 'src/app/add-reclamation-form/add-reclamation-form.component';
+import { ReclamationComponent } from 'src/app/reclamation/reclamation.component';
+
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
@@ -20,5 +22,6 @@ export const AdminLayoutRoutes: Routes = [
     {path:"enfants", component:EnfantCComponent},
     { path: 'event',          component: EventComponent },
     { path: 'add-form',          component: addformcomponent },
-    { path: 'reclamation',          component: ReclamationComponent }
+    { path: 'reclamation', component:ReclamationComponent},
+    { path: 'add-reclamation-form',          component: AddReclamationFormComponent }
 ];

@@ -15,6 +15,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatDialogModule} from '@angular/material/dialog';
 import { EventComponent } from 'src/app/event/event.component';
 import { addformcomponent } from 'src/app/add-form/add-form.component';
+import { Reclamation } from 'src/app/Reclamation';
+import { ReclamationComponent } from 'src/app/reclamation/reclamation.component';
+import { AddReclamationFormComponent } from 'src/app/add-reclamation-form/add-reclamation-form.component';
 
 // import { ToastrModule } from 'ngx-toastr';
 
@@ -34,6 +37,8 @@ import { addformcomponent } from 'src/app/add-form/add-form.component';
     TablesComponent,
     IconsComponent,
     MapsComponent,
+    // AddReclamationFormComponent,
+    // ReclamationComponent,
     addformcomponent
   ]
 })

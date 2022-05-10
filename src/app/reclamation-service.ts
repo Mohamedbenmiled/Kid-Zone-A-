@@ -1,29 +1,35 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-// import { Observable } from "rxjs";
-// import { user } from "./user";
+import { Observable } from "rxjs";
+import { Reclamation } from "./Reclamation";
+
 @Injectable({
     providedIn: 'root'
-    })
-    export class ReclamationService {
-       // private userUrl: string
-    readonly API_URL = 'http://localhost:8068/SpringMVC/Reclamation';
-    constructor (private httpClient: HttpClient) {
-       // this.userUrl = 'http://localhost:8080/SpringMVC/User/affiche';
-     }
-    getAllReclamations() {
-    return this.httpClient.get(`${this.API_URL}/affiche`)
+})
+export class ReclamationService {
+    readonly API_URL = 'http://localhost:8068/SpringMVC/Reclamation'
+    constructor(private httpClient: HttpClient){}
+   // Reclamation: Reclamation = new Reclamation();
+    getReclamations(){
+        return this.httpClient.get(`${this.API_URL}/affiche`);
+        
     }
-    addReclamation (reclamation: any) {
-    return this.httpClient.post(`${this.API_URL}/add-rec`, reclamation)
+    addReclamation(Reclamation1: any){
+        return this.httpClient.post<Reclamation>(`${this.API_URL}/add-rec`, Reclamation1)
     }
-    editReclamation (reclamation: any) {
-    return this.httpClient.put(`${this.API_URL}/modify-rec`, reclamation)
+    modifyReclamation(Reclamation1: any){
+        return this.httpClient.put(`${this.API_URL}/modify-rec`, Reclamation1)
     }
-    deleteReclamation (idreclamation: any) {
-    return this.httpClient.delete(`${this.API_URL}/remove-rec/${idreclamation}`)
+    deleteReclamation(idReclamation: Number){
+        return this.httpClient.delete(`${this.API_URL}/remove-rec/${idReclamation}`)
     }
-    // getUsers(): Observable<user[]> {
-    //     return this.httpClient.get<user[]>(this.userUrl);
-    //    }
+    retrieveReclamation(idReclamation: Number){
+        return this.httpClient.get(`${this.API_URL}/retrieve-rec/${idReclamation}`)
+    }
+   //  finfReclamationByName(name: string): Observable<Reclamation[]> {
+   //      return this.httpClient.get<Reclamation[]>(`${this.API_URL}/find-ReclamationByNom/${name}`)
+   //  }
+   //  triReclamation(){
+   //      return this.httpClient.get<Reclamation[]>(`${this.API_URL}/tri-Reclamation`);
+   //  }
 }

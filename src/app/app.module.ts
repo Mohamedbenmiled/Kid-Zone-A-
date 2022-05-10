@@ -19,6 +19,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { EnfantCComponent } from './pages/enfant-c/enfant-c.component';
 import { EventComponent } from './event/event.component';
 import { CategorieEventComponent } from './categorie-event/categorie-event.component';
+import { AddReclamationFormComponent } from './add-reclamation-form/add-reclamation-form.component';
+import { ReclamationComponent } from './reclamation/reclamation.component';
 
 @NgModule({
   imports: [
@@ -39,7 +41,8 @@ import { CategorieEventComponent } from './categorie-event/categorie-event.compo
     UpdateClassComponent,
     EventComponent,
     EnfantCComponent,
-    CategorieEventComponent
+    CategorieEventComponent,
+    ReclamationComponent
   ],
   providers: [
   ],

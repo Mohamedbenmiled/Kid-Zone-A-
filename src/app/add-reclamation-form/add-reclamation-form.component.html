@@ -1,0 +1,85 @@
+
+
+
+  <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+      <div class="header-body">
+        <h2>Reclamation</h2>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row"></div>
+  <div class="col-md-12">
+    <div class="card" class="text-center">
+      <div class="col-md-8" id="htmlData"></div>
+      
+        <div class="row">
+
+          <div class="col-md-6">
+            <div>
+              <form>
+              <label>Reclamation Note</label>
+            <!-- </div> -->
+            <!-- <input matInput placeholder="nom" type="text" [(ngModel)]="Reclamation.nom"> -->
+            <input matInput type="text" name="nom" [(ngModel)]="Reclamation.note" class="form-control">
+
+          <!-- </div> -->
+
+        <!-- </div> -->
+        <div class="row">
+          <div class="col-md-6">
+            <div>
+              <label>Reclamation Description </label>
+            </div>
+
+            <input matInput type="text" name="nombre inscri" [(ngModel)]="Reclamation.description" class="form-control">
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <!-- <div>
+              <label>Reclamation date</label>
+            </div>
+
+            <input matInput type="date" name="date Reclamation" [(ngModel)]="Reclamation.dateReclamation" class="form-control">
+
+          </div>
+
+        </div> -->
+        <!-- <div class="row">
+          <div class="col-md-6">
+
+            <label>Select a category</label>
+            <select [(value)]="selectedtype" [(ngModel)]="Reclamation.note" class="form-control">
+              <option>None</option>
+              <option value="sport"> Sport</option>
+              <option value="musique">Music</option>
+              <option value="theatre">Theatre</option>
+            </select>
+          </div>
+        </div> -->
+        <div>
+          <a routerLink="/Reclamation"><button mat-raised-button type="submit" class="btn btn-danger pull-right"
+              href="http://localhost:4200/#/reclamation" (click)="create()">Create Reclamation</button> </a>
+        </div>
+        <div class="clearfix"></div>
+      <!-- </form> -->
+      <!-- <button type="button" class="btn btn-primary btn-lg btn-block" (click)="openPDF()">Download PDF</button> -->
+
+    </div>
+  </div>
+  <!-- <div>
+                <ng-template #content let-modal>
+                  <div class="modal-body">
+                    <app-add-form
+                    (submit)="create($Reclamation)"
+                    ></app-add-form>
+                  </div>
+                </ng-template>
+           </div> -->
+
+<!-- </body> -->
+
