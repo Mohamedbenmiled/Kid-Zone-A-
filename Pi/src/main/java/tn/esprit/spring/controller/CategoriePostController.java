@@ -48,10 +48,10 @@ public class CategoriePostController {
 		categoriePostService.deleteCategoriePost(idCategoriePost);
 	}
 
-	// http://localhost:8068/Publication/modify-CategoriePost/{idCategoriePost}
-	@PutMapping("/modify-CategoriePost")
+	// http://localhost:8068/Publication/modify-CategoriePost
+	@PutMapping("/modify-CategoriePost/{idCategoriePost}")
 	@ResponseBody
-	public CategoriePost modifyPublication(@RequestBody CategoriePost c) {
+	public CategoriePost modifyPublication(@RequestBody CategoriePost c , @PathVariable long idCategoriePost) {
 		return categoriePostService.updateCategoriePost(c);
 	}
 
