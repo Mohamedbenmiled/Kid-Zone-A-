@@ -50,32 +50,32 @@ export class ReclamationComponent implements OnInit {
       this.form = false;
     });
   }
-  modifyReclamation(e:Event){
+  modifyReclamation(e:Reclamation){
      this.ReclamationService.modifyReclamation(e).subscribe();
   }
-  deleteReclamation(idEvent:any){
-    this.ReclamationService.deleteReclamation(idEvent).subscribe(()=>
+  deleteReclamation(idReclamation:any){
+    this.ReclamationService.deleteReclamation(idReclamation).subscribe(()=>
     this.getReclamations()
     );
   }
-//   Search() {
-//     if (this.SearchVal === '') {
-//       this.getReclamations();
-//     } else {
-//       this.ReclamationService.finfEventByName(this.SearchVal).subscribe((res) => {
-//         this.listReclamation = res;
-//       });
-//     }
-//   }
-//   triEvent(){
-//     this.ReclamationService.triEvent().subscribe(
-//       (data:Reclamation[])=> this.listReclamation = data
-//     );
-//   }
+  Search() {
+    if (this.SearchVal === '') {
+      this.getReclamations();
+    } else {
+      this.ReclamationService.finfReclamationByName(this.SearchVal).subscribe((res) => {
+        this.listReclamation = res;
+      });
+    }
+  }
+  triReclamation(){
+    this.ReclamationService.triReclamation().subscribe(
+      (data:Reclamation[])=> this.listReclamation = data
+    );
+  }
 
-//   create(event){
-//     console.log(event)
-//     this.ReclamationService.addReclamation(event).subscribe(data =>{
+//   create(Reclamation){
+//     console.log(Reclamation)
+//     this.ReclamationService.addReclamation(Reclamation).subscribe(data =>{
 //       this.getReclamations();
 //       alert("Class successfully added");
 //     });

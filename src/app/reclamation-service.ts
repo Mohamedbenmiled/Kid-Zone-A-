@@ -26,10 +26,10 @@ export class ReclamationService {
     retrieveReclamation(idReclamation: Number){
         return this.httpClient.get(`${this.API_URL}/retrieve-rec/${idReclamation}`)
     }
-   //  finfReclamationByName(name: string): Observable<Reclamation[]> {
-   //      return this.httpClient.get<Reclamation[]>(`${this.API_URL}/find-ReclamationByNom/${name}`)
-   //  }
-   //  triReclamation(){
-   //      return this.httpClient.get<Reclamation[]>(`${this.API_URL}/tri-Reclamation`);
-   //  }
+    finfReclamationByName(name: string): Observable<Reclamation[]> {
+        return this.httpClient.get<Reclamation[]>(`${this.API_URL}/rechercheReclamation/${name}`)
+    }
+    triReclamation(){
+        return this.httpClient.get<Reclamation[]>(`${this.API_URL}/getReclamationDesc`);
+    }
 }
