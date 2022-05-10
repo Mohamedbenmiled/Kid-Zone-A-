@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,25 +35,17 @@ public class Publication  implements Serializable {
 	@Column(name="Contenue")
 
 	private String contenue ; 
-	@Column(name="Commentaire")
-
-	private String commentaire ; 
-	@Column(name="Interraction")
-
-	private Boolean interraction ;
-	@Column(name="Image")
-
-	private String image ;
+	
 	
 	//@Column(name="CategoriePublication")
     @JsonIgnore
-
 	@ManyToOne(fetch= FetchType.LAZY)
 	private CategoriePost categoriePublication ;
     @JsonIgnore
 
 	@ManyToOne(fetch= FetchType.LAZY)
 	private User user ;
-	
+    @Enumerated(EnumType.STRING)
+	 private CateforiePublication catPost;
 
 }

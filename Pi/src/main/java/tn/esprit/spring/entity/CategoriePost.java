@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
@@ -34,8 +36,11 @@ public class CategoriePost implements Serializable {
 	@Column(name="label")
 
 	private String label ; 
-	@Column(name="Publication")
 	@JsonIgnore
+	@Column(name="Publication")
 	@OneToMany (mappedBy="categoriePublication")
 	private Set<Publication> publication ;
+	
+
 }
+ 
