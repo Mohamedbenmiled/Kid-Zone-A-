@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.spring.Iservice.IPublicationService;
+import tn.esprit.spring.entity.CategoriePost;
 import tn.esprit.spring.entity.Publication;
+import tn.esprit.spring.repository.CategoriePostRepository;
 import tn.esprit.spring.repository.PublicationRepository;
 
 @Service
@@ -13,10 +15,13 @@ import tn.esprit.spring.repository.PublicationRepository;
 public class PublicationService implements IPublicationService {
 	@Autowired
 	PublicationRepository publicationRepository;
+	CategoriePostRepository categ;
+
 	@Override
 	public Publication addPublication(Publication p) {
-	publicationRepository.save(p);
-	return null;
+		
+		//new Date()
+	return publicationRepository.save(p);
 	}
 
 	@Override
@@ -43,6 +48,12 @@ public class PublicationService implements IPublicationService {
 		return null;
 	}
 
+	public void addAndassignCategoriePost(Long idPost, long idCategoriePost) {
+		Publication p = publicationRepository.findById(idPost).orElse(null);
+		CategoriePost c = categ.findById(idCategoriePost).orElse(null); 
+	}
+
+	
 
 
 }

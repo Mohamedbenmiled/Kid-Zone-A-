@@ -11,6 +11,10 @@ public interface ICategoriePostService {
 	 void deleteCategoriePost(long id);
 	 CategoriePost updateCategoriePost (CategoriePost c);
 	 CategoriePost getCategoriePostById( long id);
-	
+	 void sendEmail(String toEmail , String Subject , String Body);
+	List<CategoriePost> retrieveCategbyid(Long id);
+	List<CategoriePost> listAll();
+	List<CategoriePost>retrieveByName(String label);
+
 
 }
